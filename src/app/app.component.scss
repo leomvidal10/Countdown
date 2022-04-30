@@ -1,0 +1,137 @@
+$black: #4D4C59;
+$purple: #6C63FF;
+$light-grey: #C8C8C8;
+$text-color: #9C9AB6;
+
+.container {
+  position: relative;
+  height: 100vh;
+
+  &__top-image {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &__bottom-image {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &__main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+
+    &__countdown {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 30rem;
+
+      &__title {
+        color: $purple;
+        font-size: 36px;
+        font-weight: 700;
+      }
+
+      &__info {
+        display: flex;
+        width: 100%;
+        color: $light-grey;
+        font-size: 14px;
+        justify-content: space-around;
+        padding-left: 1.5rem;
+      }
+
+      &__countdown-timer {
+        display: flex;
+        align-items: center;
+        font-size: 72px;
+        width: 100%;
+        color: $black;
+
+        span {
+          margin: 0 5px;
+        }
+
+        &__timer {
+          text-align: center;
+          width: 100%;
+        }
+      }
+
+      &__text {
+        color: $text-color;
+        font-size: 14px;
+        text-align: center;
+      }
+
+      &__btn {
+        width: 160px;
+        font-size: 16px;
+        background-color: $purple;
+        color: white;
+        outline: none;
+        border: none;
+        margin-top: 1.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      &__btn:hover {
+        opacity: 0.8;
+        transition: ease-in-out opacity 0.2s;
+      }
+    }
+
+    &__rocket {
+      &__img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1050px) {
+  .container {
+    &__main {
+      flex-direction: column;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    &__main {
+      justify-content: space-evenly;
+      flex-direction: column;
+
+      &__countdown {
+
+        &__title {
+          font-size: 26px;
+        }
+
+        &__countdown-timer {
+          font-size: 52px;
+        }
+      }
+
+      &__rocket {
+        display: flex;
+        justify-content: center;
+        &__img {
+          width: 80%;
+        }
+      }
+    }
+  }
+}
+
